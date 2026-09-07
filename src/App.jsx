@@ -14,7 +14,9 @@ const App = () => {
   const [styling, setStyling] = useState(INITIAL_STYLING);
 
   const handleReset = () => {
-    if (window.confirm("Reset campaign configuration and styling to defaults?")) {
+    if (
+      window.confirm("Reset campaign configuration and styling to defaults?")
+    ) {
       setContent(INITIAL_CONTENT);
       setStyling(INITIAL_STYLING);
       setActivePreviewStep("initial");
@@ -83,7 +85,7 @@ const App = () => {
         </section>
 
         {/* Right Column: Sticky Live Mobile Preview (5 cols on lg) */}
-        <aside className="lg:col-span-5 flex flex-col items-center sticky top-20 order-1 lg:order-2">
+        <aside className="lg:col-span-5 flex flex-col items-center top-20 order-1 lg:order-2">
           <div className="w-full bg-slate-900/50 border border-slate-800/80 rounded-3xl p-4 backdrop-blur-md shadow-2xl flex flex-col items-center">
             <Preview
               content={content}
