@@ -1,6 +1,17 @@
 import React, { useState } from "react";
-import { Sparkles, RotateCcw, Copy, Check, Download, Layers } from "lucide-react";
-import { THEME_PRESETS, INITIAL_CONTENT, INITIAL_STYLING } from "../constants/defaultState";
+import {
+  Sparkles,
+  RotateCcw,
+  Copy,
+  Check,
+  Download,
+  Layers,
+} from "lucide-react";
+import {
+  THEME_PRESETS,
+  INITIAL_CONTENT,
+  INITIAL_STYLING,
+} from "../constants/defaultState";
 
 const Header = ({
   campaignName,
@@ -39,7 +50,7 @@ const Header = ({
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
         {/* Logo & Campaign Title */}
         <div className="flex items-center gap-3 w-full md:w-auto">
-          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-purple-600 to-pink-500 shadow-md shadow-indigo-500/20 text-white font-black text-lg">
+          <div className="flex items-center justify-center w-10 h-10 rounded-xl bg-linear-to-tr from-indigo-600 via-purple-600 to-pink-500 shadow-md shadow-indigo-500/20 text-white font-black text-lg">
             AS
           </div>
           <div>

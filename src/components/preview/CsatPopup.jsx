@@ -20,28 +20,31 @@ const CsatPopup = ({
     styling.fontSize === "sm"
       ? "text-base"
       : styling.fontSize === "lg"
-      ? "text-xl"
-      : "text-lg";
+        ? "text-xl"
+        : "text-lg";
 
   const bodySizeClass =
     styling.fontSize === "sm"
       ? "text-xs"
       : styling.fontSize === "lg"
-      ? "text-sm"
-      : "text-xs";
+        ? "text-sm"
+        : "text-xs";
 
   const buttonHeightClass =
     styling.buttonHeight === "sm"
       ? "py-2 text-xs min-h-[38px]"
       : styling.buttonHeight === "lg"
-      ? "py-3.5 text-sm min-h-[52px]"
-      : "py-2.5 text-sm min-h-[44px]";
+        ? "py-3.5 text-sm min-h-[52px]"
+        : "py-2.5 text-sm min-h-[44px]";
 
-  const buttonWidthClass = styling.buttonWidth === "full" ? "w-full" : "w-auto px-6";
+  const buttonWidthClass =
+    styling.buttonWidth === "full" ? "w-full" : "w-auto px-6";
 
   const handleToggleOption = (optId) => {
     setSelectedOptions((prev) =>
-      prev.includes(optId) ? prev.filter((id) => id !== optId) : [...prev, optId]
+      prev.includes(optId)
+        ? prev.filter((id) => id !== optId)
+        : [...prev, optId],
     );
   };
 
@@ -49,8 +52,8 @@ const CsatPopup = ({
     <div
       className={`w-full transition-all duration-300 shadow-2xl relative ${
         styling.position === "bottom"
-          ? "rounded-t-[24px] pb-6 pt-3 px-5 border-t border-black/10"
-          : "rounded-[24px] p-5 my-auto max-w-[92%] border border-black/10 mx-auto"
+          ? "rounded-t-3xl pb-6 pt-3 px-5 border-t border-black/10"
+          : "rounded-3xl p-5 my-auto max-w-[92%] border border-black/10 mx-auto"
       }`}
       style={{
         backgroundColor: styling.bgColor,
@@ -84,10 +87,11 @@ const CsatPopup = ({
           </h3>
 
           <p
-            className={`leading-relaxed max-w-[260px] ${bodySizeClass}`}
+            className={`leading-relaxed max-w-65 ${bodySizeClass}`}
             style={{ color: styling.subtitleColor }}
           >
-            {content.initial.subtitle || "Help us improve by sharing your thoughts."}
+            {content.initial.subtitle ||
+              "Help us improve by sharing your thoughts."}
           </p>
 
           <div className="pt-2 w-full flex justify-center">
@@ -184,7 +188,10 @@ const CsatPopup = ({
                 })}
               </div>
             )}
-            <div className="flex justify-between px-2 text-[10px] mt-1 font-medium" style={{ color: styling.subtitleColor }}>
+            <div
+              className="flex justify-between px-2 text-[10px] mt-1 font-medium"
+              style={{ color: styling.subtitleColor }}
+            >
               <span>Poor</span>
               <span>Excellent</span>
             </div>
@@ -299,7 +306,7 @@ const CsatPopup = ({
           </h3>
 
           <p
-            className={`leading-relaxed max-w-[260px] ${bodySizeClass}`}
+            className={`leading-relaxed max-w-65 ${bodySizeClass}`}
             style={{ color: styling.subtitleColor }}
           >
             {content.thankYou.subtitle ||

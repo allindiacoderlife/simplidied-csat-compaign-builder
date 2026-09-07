@@ -18,22 +18,23 @@ const PhoneMockup = ({
   appBackdrop = "modern",
 }) => {
   return (
-    <div className="relative w-[320px] h-[650px] mx-auto select-none drop-shadow-[0_25px_35px_rgba(0,0,0,0.5)]">
+    <div className="relative w-[320px] h-162.5 mx-auto select-none drop-shadow-[0_25px_35px_rgba(0,0,0,0.5)]">
       {/* 1. SCREEN CONTAINER (Sits inside the iPhone 15 frame) */}
-      <div className="absolute top-[12px] bottom-[12px] left-[12px] right-[12px] rounded-[42px] overflow-hidden bg-slate-900 z-10 flex flex-col justify-between">
-        
+      <div className="absolute top-3 bottom-3 left-3 right-3 rounded-[42px] overflow-hidden bg-slate-900 z-10 flex flex-col justify-between">
         {/* Simulated Mobile App Backdrop */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
           {appBackdrop === "modern" ? (
-            <div className="w-full h-full bg-gradient-to-b from-slate-100 via-slate-50 to-slate-200 p-4 text-slate-800 flex flex-col">
+            <div className="w-full h-full bg-linear-to-b from-slate-100 via-slate-50 to-slate-200 p-4 text-slate-800 flex flex-col">
               {/* App Fake Nav */}
               <div className="flex items-center justify-between pt-10 pb-3 border-b border-slate-200/80">
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-500 text-[10px] text-white font-bold flex items-center justify-center">
+                  <div className="w-7 h-7 rounded-full bg-linear-to-tr from-indigo-500 to-purple-500 text-[10px] text-white font-bold flex items-center justify-center">
                     JD
                   </div>
                   <div>
-                    <p className="text-[11px] font-bold leading-tight">Welcome back</p>
+                    <p className="text-[11px] font-bold leading-tight">
+                      Welcome back
+                    </p>
                     <p className="text-[9px] text-slate-500">Alex Morgan</p>
                   </div>
                 </div>
@@ -50,9 +51,11 @@ const PhoneMockup = ({
                   <div className="h-2 w-full bg-slate-100 rounded-full mt-2" />
                 </div>
 
-                <div className="p-3 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-2xl text-white shadow-sm">
+                <div className="p-3 bg-linear-to-r from-indigo-600 to-purple-600 rounded-2xl text-white shadow-sm">
                   <p className="text-[10px] opacity-80">Active Subscription</p>
-                  <p className="text-xs font-bold mt-0.5">Pro Enterprise Tier</p>
+                  <p className="text-xs font-bold mt-0.5">
+                    Pro Enterprise Tier
+                  </p>
                 </div>
 
                 <div className="grid grid-cols-2 gap-2">
@@ -93,7 +96,9 @@ const PhoneMockup = ({
         {/* CSAT Campaign Popup (Interactive) */}
         <div
           className={`relative z-20 w-full flex flex-col ${
-            styling.position === "bottom" ? "justify-end mt-auto" : "justify-center my-auto px-2"
+            styling.position === "bottom"
+              ? "justify-end mt-auto"
+              : "justify-center my-auto px-2"
           }`}
         >
           <CsatPopup

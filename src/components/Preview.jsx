@@ -46,7 +46,7 @@ const Preview = ({
   return (
     <div className="flex flex-col items-center justify-start w-full h-full py-4 px-2">
       {/* Top Preview Controls Bar */}
-      <div className="w-full max-w-[340px] flex flex-col gap-2.5 mb-4">
+      <div className="w-full max-w-85 flex flex-col gap-2.5 mb-4">
         <div className="flex items-center justify-between text-xs">
           <span className="flex items-center gap-1.5 font-semibold text-slate-300">
             <Smartphone className="w-4 h-4 text-indigo-400" />
@@ -56,7 +56,9 @@ const Preview = ({
             <button
               type="button"
               onClick={() =>
-                setAppBackdrop((prev) => (prev === "modern" ? "dark" : "modern"))
+                setAppBackdrop((prev) =>
+                  prev === "modern" ? "dark" : "modern",
+                )
               }
               className="text-[11px] px-2 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition-colors cursor-pointer"
               title="Toggle simulated background theme"
@@ -113,8 +115,9 @@ const Preview = ({
         />
       </div>
 
-      <p className="text-[11px] text-slate-500 mt-3 text-center max-w-[280px]">
-        Interactive simulator: click ratings, tags, or buttons inside the iPhone to test full campaign flow.
+      <p className="text-[11px] text-slate-500 mt-3 text-center max-w-70">
+        Interactive simulator: click ratings, tags, or buttons inside the iPhone
+        to test full campaign flow.
       </p>
     </div>
   );

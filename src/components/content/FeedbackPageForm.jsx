@@ -1,5 +1,13 @@
 import React from "react";
-import { Star, Hash, Plus, Trash2, Sliders, CheckSquare, MessageSquare } from "lucide-react";
+import {
+  Star,
+  Hash,
+  Plus,
+  Trash2,
+  Sliders,
+  CheckSquare,
+  MessageSquare,
+} from "lucide-react";
 
 const FeedbackPageForm = ({ data, onChange }) => {
   const handleRatingTypeChange = (type) => {
@@ -21,7 +29,7 @@ const FeedbackPageForm = ({ data, onChange }) => {
     onChange({
       ...data,
       options: data.options.map((opt) =>
-        opt.id === id ? { ...opt, label: newLabel } : opt
+        opt.id === id ? { ...opt, label: newLabel } : opt,
       ),
     });
   };
@@ -56,7 +64,9 @@ const FeedbackPageForm = ({ data, onChange }) => {
                 : "bg-slate-800/80 border-slate-700/80 text-slate-300 hover:bg-slate-800"
             }`}
           >
-            <Star className={`w-4 h-4 ${data.ratingType === "stars" ? "fill-amber-400 text-amber-400" : "text-slate-400"}`} />
+            <Star
+              className={`w-4 h-4 ${data.ratingType === "stars" ? "fill-amber-400 text-amber-400" : "text-slate-400"}`}
+            />
             <span>Star Rating (1–5)</span>
           </button>
 
@@ -117,7 +127,11 @@ const FeedbackPageForm = ({ data, onChange }) => {
                 onClick={() => handleDeleteOption(opt.id)}
                 disabled={data.options.length <= 1}
                 className="p-1.5 text-slate-400 hover:text-rose-400 disabled:opacity-30 disabled:hover:text-slate-400 rounded-lg hover:bg-rose-500/10 transition-colors cursor-pointer"
-                title={data.options.length <= 1 ? "Minimum 1 option required" : "Delete option"}
+                title={
+                  data.options.length <= 1
+                    ? "Minimum 1 option required"
+                    : "Delete option"
+                }
               >
                 <Trash2 className="w-4 h-4" />
               </button>
@@ -149,7 +163,7 @@ const FeedbackPageForm = ({ data, onChange }) => {
               }
               className="sr-only peer"
             />
-            <div className="w-10 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+            <div className="w-10 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-0.5 after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
           </label>
         </div>
 
